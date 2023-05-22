@@ -1,0 +1,29 @@
+# Project Related directories
+sf-source/advanced-apex-unit-testing/main/default
+
+# Salesforce cache
+.sfdx/
+.sf/
+.localdevserver/
+
+# General Project related
+.DS_Store
+target/
+temp/
+.execanon
+
+# VS Code IDE Related
+.vscode/
+.history/
+
+# Illuminated Cloud Related
+.idea/
+IlluminatedCloud
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+

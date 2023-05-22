@@ -1,0 +1,12 @@
+{
+  "packageDirectories": [
+    {
+      "path": "sf-source/advanced-apex-unit-testing",
+      "default": true
+    }
+  ],
+  "name": "sed23-advanced-apex-unit-testing-techniques",
+  "namespace": "",
+  "sfdcLoginUrl": "https://login.salesforce.com",
+  "sourceApiVersion": "57.0"
+}
