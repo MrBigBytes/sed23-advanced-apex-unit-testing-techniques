@@ -20,7 +20,7 @@ public with sharing class OrderService
         } 
         catch (WarehouseServiceExceptions.NoSuchProductException nspe) 
         {
-            return String.format('There are no products called {0}.', new List<Object>{productName});
+            return String.format('There are no products called {0}.', new List<Object>{ productName });
         }
         catch (WarehouseServiceExceptions.IsClosedException ice) 
         {

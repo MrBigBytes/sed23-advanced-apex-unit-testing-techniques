@@ -83,7 +83,7 @@ if [ 43 -gt "$progress_marker_value" ]
   then
     rm -fR "$temp_dir/fflib-apex-common"
     git clone -q --no-tags https://github.com/apex-enterprise-patterns/fflib-apex-common.git $temp_dir/fflib-apex-common
-    cd $temp_dir/fflib-apex-common
+    cd "$temp_dir/fflib-apex-common"
     sf project deploy start --ignore-conflicts --target-org $org_alias
     cd ../..
     rm -fR "$temp_dir/fflib-apex-common"
