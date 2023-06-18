@@ -1,6 +1,7 @@
-public with sharing class OrderService 
+public with sharing class OrderService2
 {
-    private IWarehouseService wh = new WarehouseServiceImpl();
+    // private IWarehouseService wh = new WarehouseServiceImpl();
+    private IWarehouseService wh = (IWarehouseService)Application.Service.newInstance(IWarehouseService.class);
 
     public String addToOrder( Order o, String productName, Integer requestedQuantity )
     {
@@ -28,14 +29,13 @@ public with sharing class OrderService
         }
     }
 
-    // TODO REMOVE EVERYTHING BELOW FOR INITIAL DISPLAY
-    public OrderService()
-    {
-        
-    }
+    // NOTE: Overriding class constructor is no longer required when using Factory injection
+    // public OrderService2()
+    // {    
+    // }
 
-    public OrderService(IWarehouseService wh)
-    {
-        this.wh = wh; 
-    }
+    // public OrderService(IWarehouseService wh)
+    // {
+    //     this.wh = wh; 
+    // }
 }
