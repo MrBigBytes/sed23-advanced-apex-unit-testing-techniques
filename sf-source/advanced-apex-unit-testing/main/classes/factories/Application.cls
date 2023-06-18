@@ -6,7 +6,8 @@ public class Application
 	public static final SimpleServiceFactory Service = 
                                             new Application.SimpleServiceFactory( 
                                                 new Map<Type, Type> {
-                                                    IWarehouseService.class => WarehouseServiceImpl.class
+                                                    IWarehouseService.class => WarehouseServiceImpl.class,
+                                                    IOrderService.class => OrderServiceImpl.class
                                                 });
 
     public class SimpleServiceFactory

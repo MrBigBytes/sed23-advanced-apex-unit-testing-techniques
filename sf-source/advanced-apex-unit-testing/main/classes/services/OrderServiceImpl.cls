@@ -1,4 +1,5 @@
-public with sharing class OrderService 
+public with sharing class OrderServiceImpl
+    implements IOrderService
 {
     private IWarehouseService wh = new WarehouseServiceImpl();
 
@@ -29,12 +30,12 @@ public with sharing class OrderService
     }
 
     // TODO REMOVE EVERYTHING BELOW FOR INITIAL DISPLAY
-    public OrderService()
+    public OrderServiceImpl()
     {
         
     }
 
-    public OrderService(IWarehouseService wh)
+    public OrderServiceImpl(IWarehouseService wh)
     {
         this.wh = wh; 
     }
