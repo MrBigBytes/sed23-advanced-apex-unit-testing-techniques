@@ -2,12 +2,11 @@
 
 ###############################################################
 # 
-# bin/resetScratchOrg {org_alias} {--default}
+# bin/resetScratchOrg {org_alias}
 # 
 ###############################################################
 
 org_alias=$1
-set_to_default=$2
 
 if [ -z "$1" ]
   then
@@ -74,7 +73,7 @@ if [ 40 -gt "$progress_marker_value" ]
     cd $temp_dir/fflib-apex-mocks
     sf project deploy start --ignore-conflicts --target-org $org_alias
     cd ../..
-    rm -fR "$temp_dir/fflib-apex-mocks"
+    # rm -fR "$temp_dir/fflib-apex-mocks"
     echo 40 > "$temp_dir/$progress_marker_filename"
     progress_marker_value=40
 fi
@@ -86,7 +85,7 @@ if [ 43 -gt "$progress_marker_value" ]
     cd "$temp_dir/fflib-apex-common"
     sf project deploy start --ignore-conflicts --target-org $org_alias
     cd ../..
-    rm -fR "$temp_dir/fflib-apex-common"
+    # rm -fR "$temp_dir/fflib-apex-common"
     echo 43 > "$temp_dir/$progress_marker_filename"
     progress_marker_value=43
 fi
@@ -110,11 +109,8 @@ if [ 99 -gt "$progress_marker_value" ]
     progress_marker_value=99
 fi
 
-if [ "$set_to_default" == "--default" ]
-  then
-    echo "Setting $org_alias as the default username"
-    sfdx config set target-org=$org_alias
-fi
+echo "Setting $org_alias as the default username"
+sfdx config set target-org=$org_alias
 
 # remove marker file
 rm "$temp_dir/$progress_marker_filename"
