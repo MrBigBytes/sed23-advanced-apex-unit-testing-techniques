@@ -53,6 +53,8 @@ set -e
 if [ 20 -gt "$progress_marker_value" ]
   then
     sf org create scratch --wait 30 --duration-days 2 --definition-file config/project-scratch-def.json --alias $org_alias
+    echo "Setting $org_alias as the default username"
+    sfdx config set target-org=$org_alias
     echo 20 > "$temp_dir/$progress_marker_filename"
     progress_marker_value=20
 fi
@@ -108,9 +110,6 @@ if [ 99 -gt "$progress_marker_value" ]
     echo 99 > "$temp_dir/$progress_marker_filename"
     progress_marker_value=99
 fi
-
-echo "Setting $org_alias as the default username"
-sfdx config set target-org=$org_alias
 
 # remove marker file
 rm "$temp_dir/$progress_marker_filename"
