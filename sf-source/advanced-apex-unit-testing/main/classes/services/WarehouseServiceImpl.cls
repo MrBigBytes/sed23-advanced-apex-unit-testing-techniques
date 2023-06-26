@@ -36,9 +36,6 @@ public with sharing class WarehouseServiceImpl
         Date myDate = Date.today().addDays(0);
         Date weekStart = myDate.toStartofWeek();
         Integer daysBetween = weekStart.daysBetween(myDate);
-        System.debug(myDate);
-        System.debug(weekStart);
-        System.debug(daysBetween);
         
         // if daysBetween is 0 then today is Sunday 
         // and if daysBetween is 6 then today is Saturday

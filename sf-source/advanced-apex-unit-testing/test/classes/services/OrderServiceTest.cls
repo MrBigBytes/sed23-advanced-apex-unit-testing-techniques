@@ -28,7 +28,7 @@ private class OrderServiceTest
 
         // Given
         Order o = new Order();
-        OrderService os = new OrderService();
+        OrderServiceImpl os = new OrderServiceImpl();
 
         // When
         String message = os.addToOrder(o, 'ProductNameThatDoesNotExist', 23);
