@@ -9,14 +9,11 @@ public with sharing class WarehouseServiceImpl
         }
 
         // Query the products
-        List<Product2> productsAvailable = [SELECT CreatedById, CreatedDate, Description, DisplayUrl, ExternalDataSourceId
-                                                 , ExternalId, Family, Id, IsActive, IsArchived, IsDeleted, LastModifiedById
-                                                 , LastModifiedDate, LastReferencedDate, LastViewedDate, Name, ProductCode
-                                                 , QuantityUnitOfMeasure, StockKeepingUnit, SystemModstamp
+        List<Product2> productsAvailable = [SELECT CreatedById, CreatedDate, Description, DisplayUrl, ExternalDataSourceId, ExternalId, Family
+                                                , Id, IsActive, IsArchived, IsDeleted, LastModifiedById, LastModifiedDate, LastReferencedDate
+                                                , LastViewedDate, Name, ProductCode, QuantityUnitOfMeasure, StockKeepingUnit, SystemModstamp
                                               FROM Product2
-                                             WHERE Name = :productName
-                                               AND IsActive = true
-                                              ];
+                                             WHERE Name = :productName AND IsActive = true];
 
         if (productsAvailable.isEmpty())
         {
