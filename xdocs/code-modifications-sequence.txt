@@ -1,6 +1,9 @@
 Dependency Injection
-- DEPENDENCYINJECTION-01
+- DEPENDENCYINJECTION-01A and 01B
     - Add @TestVisible constructor to OrderServiceImpl to pass IWarehouseService
         - Constructor-based Injection example
+
 - DEPENDENCYINJECTION-02
+    - Application.cls 
+        - adding various mappings to setup the dependency injection 
     - 

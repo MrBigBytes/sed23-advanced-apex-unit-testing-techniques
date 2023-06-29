@@ -28,14 +28,4 @@ public with sharing class OrderServiceImpl2
             return 'The warehouse is currently closed.  Try again later.';
         }
     }
-
-    // NOTE: Overriding class constructor is no longer required when using Factory injection
-    // public OrderServiceImpl2()
-    // {    
-    // }
-
-    // public OrderServiceImpl2(IWarehouseService wh)
-    // {
-    //     this.wh = wh; 
-    // }
 }

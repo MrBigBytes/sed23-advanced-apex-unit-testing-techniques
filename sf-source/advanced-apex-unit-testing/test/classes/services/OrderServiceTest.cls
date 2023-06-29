@@ -38,4 +38,18 @@ private class OrderServiceTest
                         , message
                         , 'Assertion of message failed.  Actual message was \'' + message + '\'');
     }
+
+    @isTest 
+    private static void addToOrder_WithExistingProduct_ShouldReturnItemAdded_testByMocking()
+    {
+        // place holder test method to demonstrate implementing test by mocking
+
+    }
+
+    @isTest 
+    private static void addToOrder_WithNonExistentProduct_ShouldReturnNoSuchProductMessage_testByMocking()
+    {
+        // place holder test method to demonstrate implementing test by mocking
+
+    }
 }

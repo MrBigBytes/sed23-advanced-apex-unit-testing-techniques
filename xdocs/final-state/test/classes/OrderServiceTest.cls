@@ -28,7 +28,7 @@ private class OrderServiceTest
 
         // Given
         Order o = new Order();
-        OrderService os = new OrderService();
+        OrderServiceImpl os = new OrderServiceImpl();
 
         // When
         String message = os.addToOrder(o, 'ProductNameThatDoesNotExist', 23);
@@ -39,6 +39,7 @@ private class OrderServiceTest
                         , 'Assertion of message failed.  Actual message was \'' + message + '\'');
     }
 
+    // DEPENDENCYINJECTION-01
     @isTest 
     private static void addToOrder_WithExistingProduct_ShouldReturnItemAdded_testByMocking()
     {
@@ -59,7 +60,7 @@ private class OrderServiceTest
 
         // Given 
         Order o = new Order();
-        OrderService os = new OrderService( mockWarehouse );
+        OrderServiceImpl os = new OrderServiceImpl( mockWarehouse );
 
         // When
         String message = os.addToOrder(o, 'Apple', 23);
@@ -74,6 +75,7 @@ private class OrderServiceTest
 
     }
 
+    // DEPENDENCYINJECTION-01B
     @isTest 
     private static void addToOrder_WithNonExistentProduct_ShouldReturnNoSuchProductMessage_testByMocking()
     {
@@ -92,7 +94,7 @@ private class OrderServiceTest
 
         // Given 
         Order o = new Order();
-        OrderService os = new OrderService( mockWarehouse );
+        OrderServiceImpl os = new OrderServiceImpl( mockWarehouse );
 
         // When
         String message = os.addToOrder(o, 'ProductNameThatDoesNotExist', 23);
@@ -107,6 +109,7 @@ private class OrderServiceTest
 
     }
 
+    // DEPENDENCYINJECTION-02
     @isTest 
     private static void addToOrder_WithExistingProduct_ShouldReturnItemAdded_testByMockingWithFactory()
     {
@@ -128,7 +131,7 @@ private class OrderServiceTest
 
         // Given 
         Order o = new Order();
-        OrderService2 os = new OrderService2();
+        OrderServiceImpl2 os = new OrderServiceImpl2();
 
         // When
         String message = os.addToOrder(o, 'Apple', 23);

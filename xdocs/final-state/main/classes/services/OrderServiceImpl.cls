@@ -29,12 +29,12 @@ public with sharing class OrderServiceImpl
         }
     }
 
-    // TODO REMOVE EVERYTHING BELOW FOR INITIAL DISPLAY
     public OrderServiceImpl()
     {
         
     }
 
+    // DEPENDENCYINJECTION-01
     public OrderServiceImpl(IWarehouseService wh)
     {
         this.wh = wh; 
