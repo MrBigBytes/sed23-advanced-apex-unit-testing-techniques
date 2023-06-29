@@ -2,7 +2,7 @@
 
 ###############################################################
 # 
-# bin/resetScratchOrg.sh {org_alias}
+# bin/setupSandboxOrg.sh {org_alias}
 # 
 ###############################################################
 
@@ -37,35 +37,8 @@ if [ -z "$progress_marker_value" ]
     progress_marker_value=0
 fi
 
-# Delete any previous scratch org with same alias
-if [ 10 -gt "$progress_marker_value" ]
-  then
-    sf org delete scratch --no-prompt --target-org $org_alias
-    echo 10 > "$temp_dir/$progress_marker_filename"
-    progress_marker_value=10
-fi
-# echo "progress_marker_value C == $progress_marker_value"
-
 # exit script when any command fails.  From here forward, if there is a failure, we want the script to fail
 set -e 
-
-# Create new scratch org
-if [ 20 -gt "$progress_marker_value" ]
-  then
-    sf org create scratch --wait 30 --duration-days 2 --definition-file config/project-scratch-def.json --alias $org_alias
-    echo "Setting $org_alias as the default username"
-    sf config set target-org $org_alias
-    echo 20 > "$temp_dir/$progress_marker_filename"
-    progress_marker_value=20
-fi
-
-# Set scratch org and scratch default user to EST timezone. Also purge sample data.
-if [ 30 -gt "$progress_marker_value" ]
-  then
-    sf data update record --sobject User --where "Name='User User'" --values "TimeZoneSidKey='America/New_York'" --target-org $org_alias
-    echo 30 > "$temp_dir/$progress_marker_filename"
-    progress_marker_value=30
-fi
 
 # Install all dependencies
 if [ 40 -gt "$progress_marker_value" ]
@@ -105,7 +78,7 @@ if [ 99 -gt "$progress_marker_value" ]
   then
     sf org open --path lightning/setup/SetupOneHome/home --target-org $org_alias
     echo ""
-    echo "Scratch org $org_alias is ready"
+    echo "Sandbox org $org_alias is ready"
     echo ""
     echo 99 > "$temp_dir/$progress_marker_filename"
     progress_marker_value=99
