@@ -6,4 +6,5 @@ Dependency Injection
 - DEPENDENCYINJECTION-02
     - Application.cls 
         - adding various mappings to setup the dependency injection 
+    - Change OrderServiceImpl to use Application.Service.newInstance() meethod
     - 

@@ -52,4 +52,11 @@ private class OrderServiceTest
         // place holder test method to demonstrate implementing test by mocking
 
     }
+
+    @isTest 
+    private static void addToOrder_WithExistingProduct_ShouldReturnItemAdded_testByMockingWithFactory()
+    {
+        // place holder test method to demonstrate implementing test by mocking
+
+    }
 }
